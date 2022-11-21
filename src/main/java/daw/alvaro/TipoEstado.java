@@ -6,6 +6,6 @@ package daw.alvaro;
  */
 public enum TipoEstado {
     
-    COMIENDO, DURMIENDO, DESPIERTO, JUGANDO;
+    COMIENDO, DURMIENDO, DESPIERTO, REPOSO, JUGANDO;
     
 }
