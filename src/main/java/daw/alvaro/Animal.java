@@ -125,7 +125,7 @@ public class Animal {
 
         } catch (NullPointerException npe) {
             //SI ES NULL PET SE INICIALIZARÁ POR DEFECTO
-            pet = new Animal();
+            copia = new Animal();
         }
 
         //SE PUEDE HACER CON IF (pet != null)

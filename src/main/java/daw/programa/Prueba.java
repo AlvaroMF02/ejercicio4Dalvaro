@@ -14,9 +14,9 @@ public class Prueba {
 
         //CREAR DOS OBJETOS ANIMALES
         Animal a1 = new Animal(LocalDate.of(2005, Month.APRIL, 13),
-                "Keca", TipoAnimal.PERRO, 30.23, TipoEstado.COMIENDO);
+                "Keca", TipoAnimal.PERRO, 30000.23, TipoEstado.COMIENDO);
         Animal a2 = new Animal(LocalDate.of(2002, Month.DECEMBER, 15),
-                "Nino", TipoAnimal.GATO, 10.0, TipoEstado.DURMIENDO);
+                "Nino", TipoAnimal.GATO, 12000.0, TipoEstado.DURMIENDO);
 
         //CREAR DOS OBJETOS PERSONAS
         Persona p1 = new Persona("Francisco", 29);
@@ -35,7 +35,7 @@ public class Prueba {
         p1.llamar(a2);
         p1.llamar(a3);
 
-        //P2 JUEGA CON A2 120 MIN                                                                   //NEGATIVOOOOO
+        //P2 JUEGA CON A2 120 MIN
         System.out.println(p2.getNombre() + " quiere jugar 120 min con " + a2.getNombre());
         p2.jugar(a2, 120);
         System.out.println(" Ahora " +a2.getNombre()+" pesa " + a2.getPeso() + "\n");
