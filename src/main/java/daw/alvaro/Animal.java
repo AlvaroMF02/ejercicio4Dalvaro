@@ -98,17 +98,29 @@ public class Animal {
 
             this.peso -= 10;
 
-        } else if (cantidadMinutos >= 30) {
+        } else if (cantidadMinutos >= 30 && cantidadMinutos <= 180) {
 
             //CUANTAS VECES HA ESTADO 30 MIN
             double rondas = cantidadMinutos / 30;
             //POR CADA 30 MIN SE MULTIPLICA LOS 20G Y SE RESTA AL PESO
             this.peso -= (rondas * 20);
 
-        } else if (cantidadMinutos > 180) {
+        } else {
             //EXCEPCION
             throw new IllegalArgumentException("No se pueden superar los 180 min de juego");
         }
+
+//        if (cantidadMinutos > 180) {
+//            //EXCEPCION
+//            throw new IllegalArgumentException("No se pueden superar los 180 min de juego");
+//        }else if (cantidadMinutos >= 30 && cantidadMinutos <= 180){
+//            //CUANTAS VECES HA ESTADO 30 MIN
+//            double rondas = cantidadMinutos / 30;
+//            //POR CADA 30 MIN SE MULTIPLICA LOS 20G Y SE RESTA AL PESO
+//            this.peso -= (rondas * 20);
+//        }else{
+//            this.peso -= 10;
+//        }
     }
 
     //CLONAR MASCOTA
@@ -121,15 +133,13 @@ public class Animal {
             copia.setPeso(pet.getPeso());
             copia.setNombre(pet.getNombre());
             copia.setTipo(pet.getTipo());
-            
-        } catch (NullPointerException  npe) {
-            //SI ES NULL PET SE INICIALIZARÁ POR DEFECTO
-           pet = new Animal();
-        }
-        
-        //SE PUEDE HACER CON IF (pet != null)
-       
 
+        } catch (NullPointerException npe) {
+            //SI ES NULL PET SE INICIALIZARÁ POR DEFECTO
+            pet = new Animal();
+        }
+
+        //SE PUEDE HACER CON IF (pet != null)
         return copia;
     }
 

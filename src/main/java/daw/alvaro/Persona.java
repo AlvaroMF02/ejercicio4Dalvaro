@@ -49,9 +49,14 @@ public class Persona {
     //JUGAR CON EL ANIMAL
     public void jugar(Animal pet, int cantidadMin) {
         //CONTROLAR LA EXCEPCION
+        if (cantidadMin > 180) {
+            cantidadMin = 180;
+        }
+
         try {
             pet.jugar(cantidadMin);
         } catch (IllegalArgumentException iae) {
+            System.out.println("Se ha superado el limite de juego, jugará 180 min");
         }
 
     }
