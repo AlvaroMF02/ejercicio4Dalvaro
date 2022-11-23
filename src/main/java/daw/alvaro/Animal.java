@@ -110,17 +110,6 @@ public class Animal {
             throw new IllegalArgumentException("No se pueden superar los 180 min de juego");
         }
 
-//        if (cantidadMinutos > 180) {
-//            //EXCEPCION
-//            throw new IllegalArgumentException("No se pueden superar los 180 min de juego");
-//        }else if (cantidadMinutos >= 30 && cantidadMinutos <= 180){
-//            //CUANTAS VECES HA ESTADO 30 MIN
-//            double rondas = cantidadMinutos / 30;
-//            //POR CADA 30 MIN SE MULTIPLICA LOS 20G Y SE RESTA AL PESO
-//            this.peso -= (rondas * 20);
-//        }else{
-//            this.peso -= 10;
-//        }
     }
 
     //CLONAR MASCOTA
