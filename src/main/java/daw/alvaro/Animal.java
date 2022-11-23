@@ -52,11 +52,11 @@ public class Animal {
         this.tipo = tipo;
     }
 
-    public double getGramos() {
+    public double getPeso() {
         return peso;
     }
 
-    public void setGramos(double gramos) {
+    public void setPeso(double gramos) {
         this.peso = gramos;
     }
 
@@ -107,20 +107,29 @@ public class Animal {
 
         } else if (cantidadMinutos > 180) {
             //EXCEPCION
+            throw new IllegalArgumentException("No se pueden superar los 180 min de juego");
         }
     }
-    
+
     //CLONAR MASCOTA
-    //CONTROLAR NUL POINTER
-    public static Animal clonar (Animal pet){
+    public static Animal clonar(Animal pet) {
         Animal copia = new Animal();
+
+        try {
+            copia.setEstado(pet.getEstado());
+            copia.setFecha(pet.getFecha());
+            copia.setPeso(pet.getPeso());
+            copia.setNombre(pet.getNombre());
+            copia.setTipo(pet.getTipo());
+            
+        } catch (NullPointerException  npe) {
+            //SI ES NULL PET SE INICIALIZARÁ POR DEFECTO
+           pet = new Animal();
+        }
         
-        copia.setEstado(pet.getEstado());
-        copia.setFecha(pet.getFecha());
-        copia.setGramos(pet.getGramos());
-        copia.setNombre(pet.getNombre());
-        copia.setTipo(pet.getTipo());
-        
+        //SE PUEDE HACER CON IF (pet != null)
+       
+
         return copia;
     }
 
@@ -128,7 +137,7 @@ public class Animal {
     @Override
     public String toString() {
         return "## Animal ##" + "\nFecha Nacimiento: " + fecha + "\nNombre: " + nombre
-                + "\nTipo: " + tipo + "\nPeso: " + peso + "\nEstado: " + estado;
+                + "\nTipo: " + tipo + "\nPeso: " + peso + "\nEstado: " + estado + "\n";
     }
 
 }

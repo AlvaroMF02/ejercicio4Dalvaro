@@ -5,12 +5,11 @@ package daw.alvaro;
  * @author alvaro
  */
 public class Persona {
-    
-    
+
     //ATRIBUTOS
     private String nombre;
     private int edad;
-    
+
     //CONSTRUCTORES
     public Persona() {
     }
@@ -19,9 +18,8 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
     }
-    
-    //GETTER SETTER
 
+    //GETTER SETTER
     public String getNombre() {
         return nombre;
     }
@@ -38,29 +36,29 @@ public class Persona {
         this.edad = edad;
     }
 
-    
     //LLAMAR AL ANIMAL
-    public void llamar (Animal pet){
+    public void llamar(Animal pet) {
         pet.despertar();
     }
-    
+
     //ALIMENTAR AL ANIMAL
-    public void alimentar (Animal pet,double cantidad){
+    public void alimentar(Animal pet, double cantidad) {
         pet.comer(cantidad);
     }
-    
+
     //JUGAR CON EL ANIMAL
-    //CONTROLAR LA EXCEPPCION CON IF
-    public void jugar (Animal pet, int cantidadMin){
-        pet.jugar(cantidadMin);
-        
+    public void jugar(Animal pet, int cantidadMin) {
+        //CONTROLAR LA EXCEPCION
+        try {
+            pet.jugar(cantidadMin);
+        } catch (IllegalArgumentException iae) {
+        }
+
     }
-    
+
     @Override
     public String toString() {
-        return "## Persona ##" + "\nNombre:" + nombre + "\nEdad:" + edad;
+        return "## Persona ##" + "\nNombre:" + nombre + "\nEdad:" + edad + "\n";
     }
-    
-    
-    
+
 }
