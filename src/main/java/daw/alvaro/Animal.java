@@ -71,6 +71,7 @@ public class Animal {
     //DAR DE COMER
     public void comer(double cantidadGramos) {
         this.peso = this.peso + Math.abs(cantidadGramos);
+        this.estado = this.estado.COMIENDO;
     }
 
     //PONER A DORMIR
@@ -109,6 +110,8 @@ public class Animal {
             //EXCEPCION
             throw new IllegalArgumentException("No se pueden superar los 180 min de juego");
         }
+        
+        this.estado = this.estado.JUGANDO;
 
     }
 
